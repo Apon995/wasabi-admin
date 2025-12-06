@@ -144,23 +144,25 @@ export default function page() {
               className="bg-white min-h-36 w-full rounded-xl p-4 flex flex-col justify-between [box-shadow:0px_1px_2px_-1px_rgba(0,0,0,0.1),0px_1px_3px_0px_rgba(0,0,0,0.1)]"
             >
               <div>
-                <div className="flex justify-between items-start mb-1">
+                <div className="flex justify-between items-start mb-1 md:flex-row flex-col-reverse gap-1 md:gap-0">
                   <h2 className="text-lg font-semibold text-navigate">
                     {course.title}
                   </h2>
-                  <span
-                    className={`px-2 py-1 text-xs rounded-full font-medium ${getStatusColor(
+                  <div className="w-full">
+                    <span
+                    className={`px-2 py-1 text-xs rounded-full font-medium float-right ${getStatusColor(
                       course.status
                     )}`}
                   >
                     {course.status}
                   </span>
+                  </div>
                 </div>
                 <p className="text-thin-gray text-sm mb-2">{course.subtitle}</p>
               </div>
 
-              <div className="flex flex-row items-center gap-2 justify-between">
-                <div className="flex-1 flex flex-row items-center  gap-6">
+              <div className="flex md:flex-row flex-col md:items-center gap-2 justify-between">
+                <div className="flex-1 flex md:flex-row flex-col md:items-center  md:gap-6 gap-2">
 
                   {/* ----Due-data--- */}
                   <div className="flex flex-row items-center gap-1">
